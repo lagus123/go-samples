@@ -3,8 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	// var card string = "Ace of Spades" Verbose declaration
-	card := "Ace of Spades" // First Call
-	card = "Five of Diamonds"
-	fmt.Println(card)
+	cards := []string{"Ace of Diamonds", newCard()}
+	cards = append(cards, "Six of Spades") // Return new slice
+
+	for _, card := range cards {
+		fmt.Println(card)
+	}
+
+}
+
+func newCard() string {
+	return "Five of Diamonds"
 }
