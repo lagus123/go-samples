@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Bit shifting and iota
 const (
 	_  = iota
 	kb = 1 << (iota * 10)

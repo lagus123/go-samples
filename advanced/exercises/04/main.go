@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// Custom types
 type hotdog int
 
 var x hotdog
