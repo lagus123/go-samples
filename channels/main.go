@@ -12,6 +12,10 @@ import (
 // Los mensajes a un canal son bloqueantes
 // No tratar de usar shared variables en routines
 
+// Concurrency is not parallelism
+// Concurrency has the ability to run goroutines (schedule work switch on the fly) almost at the same time
+// Parallelism (Only on multiple physical cores), run routines at the same exact time
+
 func main() {
 	links := []string{
 		"http://google.com",
@@ -39,11 +43,11 @@ func checkStatus(link string, c chan string) {
 	_, err := http.Get(link)
 
 	if err != nil {
-		fmt.Println(link, "Website is Down!")
+		fmt.Println(link, " Is Down")
 		c <- link
 		return
 	}
 
-	fmt.Println(link, "is Up!")
+	fmt.Println(link, " Is Up")
 	c <- link
 }
