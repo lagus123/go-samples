@@ -13,7 +13,7 @@ import (
 // No tratar de usar shared variables en routines
 
 // Concurrency is not parallelism
-// Concurrency has the ability to run goroutines (schedule work switch on the fly) almost at the same time
+// Concurrency has the ability to run (schedule work switch on the fly) almost at the same time
 // Parallelism (Only on multiple physical cores), run routines at the same exact time
 
 func main() {
