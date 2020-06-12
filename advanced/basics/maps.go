@@ -24,4 +24,9 @@ func main() {
 		fmt.Println(k, v)
 	}
 
+	// Delete key - values
+	delete(m, "Diana")
+
+	fmt.Println(m)
+
 }
