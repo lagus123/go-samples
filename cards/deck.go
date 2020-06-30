@@ -46,7 +46,7 @@ func newDeckFromFile(filename string) deck {
 	bs, err := ioutil.ReadFile(filename)
 	check(err)
 
-	return deck(strings.Split(string(bs), ","))
+	return strings.Split(string(bs), ",")
 
 }
 

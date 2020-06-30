@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	// Values from same types
@@ -17,4 +20,14 @@ func main() {
 	// Append values to slice
 	x = append(x, 4, 7)
 	fmt.Println(x)
+
+	// Sorted Slice
+	sort.Ints(x)
+	fmt.Println(x)
+
+	s := []string{ "C", "B", "A"}
+	fmt.Println(s)
+	// sort strings
+	sort.Strings(s)
+	fmt.Println(s)
 }
