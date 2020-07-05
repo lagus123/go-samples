@@ -21,8 +21,6 @@ import (
 var waitg sync.WaitGroup
 
 func main() {
-	fmt.Println("CPUs:", runtime.NumCPU())
-	fmt.Println("Goroutines:", runtime.NumGoroutine())
 
 	const gs = 100
 	counter := 0
@@ -37,9 +35,9 @@ func main() {
 			counter = v
 			waitg.Done()
 		}()
-		fmt.Println("Goroutines:", runtime.NumGoroutine())
+
+		fmt.Println("counter:", counter)
 	}
 	waitg.Wait()
-	fmt.Println("Goroutines:", runtime.NumGoroutine())
 	fmt.Println("count:", counter)
 }
