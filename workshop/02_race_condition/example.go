@@ -9,7 +9,8 @@ package main
 * Incrementar el valor de la nueva variable
 * Escribir el valor de la nueva variable en el contador
 * Usar waitgroups para esperar la finalización de cada goroutine
-* Esto crea un race condition, probarlo usando el flag -race al correr el prograa
+* Esto crea un race condition, probarlo usando el flag -race al correr el programa
+* Utilizar mutex - Utilizar paquete "sync/atomic"
  */
 
 import (
