@@ -13,13 +13,12 @@ func main() {
 
 	receive(eve, odd, quit)
 
-	// Comma ok idiom: v, ok := <-c for evaluate if channel is closed
 	fmt.Println("Exit")
 
 }
 
-func send(e, o, q chan<- int) {
-	for i := 0; i <= 50; i++ {
+func send(e, o, q chan int) {
+	for i := 1; i <= 100; i++ {
 		if i%2 == 0 {
 			e <- i
 		} else {
@@ -30,13 +29,15 @@ func send(e, o, q chan<- int) {
 	q <- 0
 }
 
-func receive(e, o, q <-chan int) {
+func receive(e, o, q chan int) {
 	for {
 		select {
 		case v := <-e:
 			fmt.Println("Even channel", v)
+			// logic
 		case v := <-o:
 			fmt.Println("Odd channel", v)
+			// logic
 		case v := <-q:
 			fmt.Println("Quit channel", v)
 			return

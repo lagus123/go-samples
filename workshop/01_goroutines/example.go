@@ -24,7 +24,6 @@ func main() {
 	wg.Add(1)
 
 	go foo()
-	bar()
 
 	fmt.Println("GOROUTINES\t\t\t", runtime.NumGoroutine())
 
@@ -33,15 +32,9 @@ func main() {
 }
 
 func foo() {
-	for i := 0; i < 10; i++ {
+	for i := 0; i <= 10; i++ {
 		fmt.Println("foo:", i)
 	}
 	// Finish Goroutine
 	wg.Done()
-}
-
-func bar() {
-	for i := 0; i < 10; i++ {
-		fmt.Println("bar:", i)
-	}
 }
